@@ -1,0 +1,25 @@
+body {
+    background-color: #dfdfdf;
+}
+
+.navicon {
+    padding-top:inherit;
+    padding-bottom:inherit;
+    color: #fcfafa;
+}
+
+a {
+    color: #247ba0;
+}
+
+nav a:hover {
+    color: #1f81aa;
+}
+
+nav {
+    background-color: #535a65;
+}
+
+nav a {
+    color: #fcfafa;
+}

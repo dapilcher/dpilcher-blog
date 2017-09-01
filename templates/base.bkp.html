@@ -27,47 +27,37 @@
 	<![endif]-->
 
 	<!-- Navbar -->
-      
-      <!-- Collapsible navbar on small screens -->
-      <nav class="d-sm-none navbar navbar-expand-lg">
+	  <nav class="navbar navbar-expand-lg">
 	<div class="container">
-		<a class="navbar-brand" href="#">doug pilcher</a>
+		<a class="navbar-brand" href="#">Home</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon navicon ion-navicon"></span>
+			<span class="navbar-toggler-icon ion-navicon-round" style="padding-top:inherit;padding-bottom:inherit;"></span>
 		</button>
 
 		<div class="collapse navbar-collapse" id="navContent">
 		  <ul class="nav navbar-nav">
-			  <li class="nav-item mx-auto"><a href="#" class="nav-link">About</a></li>
 			  <li class="nav-item mx-auto"><a href="#" class="nav-link">Contact</a></li>
+			  <li class="nav-item mx-auto"><a href="#" class="nav-link">About</a></li>
+			  <li class="nav-item mx-auto"><a href="#" class="nav-link">Login</a></li>
 
 		  </ul>
 		</div>
           </div>
 	  </nav>
-      <div class="container">
-      <!-- Left-float vertical on larger-than-small screens -->
-      <div class="row">
-      <nav class="d-none d-sm-inline-block float-sm-left text-right col-sm-3 py-5">
-        <a href="#"><h3>doug pilcher</h3></a>
-          <div class="nav d-block">
+	<!-- End navbar -->
 
-              <ul class="nav flex-column">
-                  <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                  <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
-              </ul>
-              </div>
-          </nav>
-        <!-- End navbar -->
+	<!-- Main body -->
+	<main class="container my-5">
+		{% block content %}
+		{% endblock content%}
+	</main>
+	<!-- End main body -->
 
-        <!-- Main body -->
-        <main class="col-sm-9 py-5">
-            {% block content %}
-            {% endblock content%}
-        </main>
-        <!-- End main body -->
-        </div>
-      </div>
+      <!-- Footer -->
+      <footer class="py-5">
+          <p class="col text-center">pilchblog &copy; 2017</p>
+      </footer>
+      <!-- End footer -->
 
 	{% block javascript %}
 	<script src="{% static 'js/jquery-3.2.1.js' %}"></script>
