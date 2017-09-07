@@ -2,5 +2,6 @@ from django.conf.urls import url
 from blog import views
 
 urlpatterns = [
-    url(r'^$', views.HomePageView.as_view(), name='main_home'),
+    url(r'^$', views.HomePageView.as_view(), name='blog_home'),
+    url(r'^(?P<post_id>[0-9]+)/$', views.DetailView.as_view(), name='blog_detail'),
 ]

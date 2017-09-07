@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock title %}
+
+{% block content %}
+{% if post %}
+    <!--{% include "blog/post_snippet.html" with post=post %}-->
+    <h1><a href="{% url 'blog_detail' post_id=post.id %}">{{ post.title }}</a></h1>
+    <p>{{ post.pub_date }}<br>Updated: {{ post.last_edit }}</p>
+    {% autoescape off %}{{ post.intro }}{{ post.body }}{% endautoescape %}
+{% else %}
+<p>No post found.</p>
+{% endif %}
+<hr>
+{% endblock content %}
