@@ -38,6 +38,10 @@ nav a {
     color: #fcfafa;
 }
 
+.nav-recent {
+    font-size:1.25rem;
+}
+
 img {
     height: auto;
     max-width: 100%;
@@ -50,4 +54,12 @@ pre {
 
 pre, code {
     background-color: rgba(83,90,101,0.1);
+}
+
+#me-img {
+    border-radius:15px;
+}
+
+#pub-date {
+    font-size:1.35rem;
 }

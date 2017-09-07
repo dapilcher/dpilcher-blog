@@ -31,35 +31,52 @@
       
       <!-- Collapsible navbar on small screens -->
       <nav class="d-sm-none navbar navbar-expand-lg">
-	<div class="container">
-		<a class="navbar-brand" href="{% url 'blog_home' %}">doug pilcher</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon navicon ion-navicon"></span>
-		</button>
+	    <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">doug pilcher</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon navicon ion-navicon"></span>
+            </button>
 
-		<div class="collapse navbar-collapse" id="navContent">
-		  <ul class="nav navbar-nav">
-			  <li class="nav-item mx-auto"><a href="#" class="nav-link">About</a></li>
-			  <li class="nav-item mx-auto"><a href="#" class="nav-link">Contact</a></li>
+            <div class="collapse navbar-collapse" id="navContent">
+              <ul class="nav navbar-nav">
+                  <li class="nav-item mx-auto"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                  <li class="nav-item mx-auto"><a href="{% url 'blog_home' %}" class="nav-link">Blog</a></li>
+                  <li class="nav-item mx-auto"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
 
-		  </ul>
-		</div>
+              </ul>
+            </div>
           </div>
 	  </nav>
       <div class="container">
-      <!-- Left-float vertical on larger-than-small screens -->
+
+      <!-- Left-float vertical nav on larger-than-small screens -->
       <div class="row">
       <nav class="d-none d-sm-inline-block float-sm-left text-right col-sm-3 py-5">
-        <a href="{% url 'blog_home' %}"><h3>doug pilcher</h3></a>
+        <a href="{% url 'home' %}"><h3>doug pilcher</h3></a>
           <div class="nav d-block">
 
               <ul class="nav flex-column">
-                  <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                  <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                  <figure>
+                      <img id="me-img" src="{% static 'images/gc_500x500.png' %}" />
+                  </figure>
+                  <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                  <li class="nav-item"><a href="{% url 'blog_home' %}" class="nav-link">Blog</a></li>
+                  <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
               </ul>
+
+              {% if latest_posts %}
+              <hr>
+              <p>Recent blog posts:</p>
+              <ul class="nav flex-column">
+              {% for post in latest_posts %}
+                <li class="nav-item nav-recent"><a href="{% url 'blog_detail' post_id=post.id %}">{{ post.title }}</a></li>
+              {% endfor %}
+              </ul>
+              {% endif %}
+
           </div>
 
-          </nav>
+      </nav>
         <!-- End navbar -->
 
         <!-- Main body -->
